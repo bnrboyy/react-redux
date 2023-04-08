@@ -17,6 +17,10 @@ import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import MovieDetail from "./components/movieDetails/MovieDetail";
 import Footer from "./components/footer/Footer";
+import { dividerClasses } from "@mui/material";
+import UserList from "./components/users/UserList";
+import AddUser from "./components/users/AddUser";
+import EditUser from "./components/users/EditUser";
 
 // function App() {
 //   const { data, error, isLoading } = useGetAllAttractionQuery();
@@ -82,21 +86,36 @@ import Footer from "./components/footer/Footer";
 /////////////////////////////////////////////////////////////////////////////
 
 /* react-redux movies app */
+// function App() {
+//   return (
+//     <div>
+//       <Header />
+//       <div className="container">
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/movie/:id" element={<MovieDetail />} />
+//           <Route path="*" element={<Navigate to="/" />} />
+//         </Routes>
+//       </div>
+//       <Footer />
+//     </div>
+//   );
+// }
+//////////////////////////////////////////////////////////////////////////
+
+/* React-redux-crud with TailwindCSS */
 function App() {
   return (
-    <div>
-      <Header />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<MovieDetail />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </div>
-      <Footer />
+    <div className="container mx-auto px-2 max-w-5xl pt-10 md:pt-32">
+      <h1 className="text-center font-bold text-2xl text-gray-700">
+        CRUD with redux toolkit
+      </h1>
+      <Routes>
+        <Route path="/" element={<UserList />} />
+        <Route path="/add-user" element={<AddUser />} />
+        <Route path="/edit-user/:id" element={<EditUser />} />
+      </Routes>
     </div>
   );
 }
-//////////////////////////////////////////////////////////////////////////
-
 export default App;
