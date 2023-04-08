@@ -3,7 +3,7 @@ import movieApi from "../../api/MovieApi";
 import { APIKey } from "../../api/MovieApiKey";
 import { useDispatch, useSelector } from "react-redux";
 import { addMovie } from "../../store/movieSlice";
-import './homd.scss'
+import './home.scss'
 
 import MovieListing from "../movieListing/MovieListing";
 
