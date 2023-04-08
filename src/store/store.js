@@ -5,6 +5,7 @@ import { attractionApi } from "../services/attraction";
 import attractionReducer from "./attraction-slice";
 import userSlice from "./userSlice";
 import memberSlice from "./memberSlice";
+import movieSlice from "./movieSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     attraction: attractionReducer,
     user: userSlice,  
     member: memberSlice,
+    movies: movieSlice,
   },
 
   middleware: (getDefaultMiddleware) =>

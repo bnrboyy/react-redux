@@ -1,0 +1,20 @@
+.movie-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 13px;
+
+    .card-image img {
+        width: 100%;
+        max-height: 330px;
+    }
+
+    .card-action a {
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem;
+        display: inline-block;
+        margin-top: 0.5rem;
+        border-radius: 5px;
+    }
+}

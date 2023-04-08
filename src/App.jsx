@@ -7,11 +7,16 @@ import Avatar from "@mui/material/Avatar";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useDispatch } from "react-redux";
 import { setAttractionID } from "./store/attraction-slice";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-/* Import Components */
+/* Components */
 import AttractionCard from "./components/AttractionCard";
 import User from "./components/User";
 import User2 from "./components/User2";
+import Header from "./components/header/Header";
+import Home from "./components/home/Home";
+import MovieDetail from "./components/movieDetails/MovieDetail";
+import Footer from "./components/footer/Footer";
 
 // function App() {
 //   const { data, error, isLoading } = useGetAllAttractionQuery();
@@ -63,16 +68,35 @@ import User2 from "./components/User2";
 //   );
 // }
 
+// function App() {
+//   return (
+//     <div className="App">
+//       <>
+//         <User />
+//         <hr />
+//         <User2 />
+//       </>
+//     </div>
+//   );
+// }
+/////////////////////////////////////////////////////////////////////////////
+
+/* react-redux movies app */
 function App() {
   return (
-    <div className="App">
-      <>
-        <User />
-        <hr />
-        <User2 />
-      </>
+    <div>
+      <Header />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }
+//////////////////////////////////////////////////////////////////////////
 
 export default App;
